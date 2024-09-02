@@ -5,15 +5,12 @@ typedef struct Node {
     struct Node* next;
 } Node;
 
-// Function to create a new node
 Node* createNode(int data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
-// Function to find the middle of the linked list
 Node* findMiddle(Node* head) {
     if (head == NULL) {
         return NULL;
@@ -30,7 +27,6 @@ Node* findMiddle(Node* head) {
     return slow;
 }
 
-// Function to print the linked list
 void printList(Node* head) {
     Node* temp = head;
     while (temp != NULL) {
@@ -39,8 +35,6 @@ void printList(Node* head) {
     }
     printf("\n");
 }
-
-// Function to free the linked list
 void freeList(Node* head) {
     Node* temp;
     while (head != NULL) {
@@ -51,7 +45,6 @@ void freeList(Node* head) {
 }
 
 int main() {
-    // Creating a linked list: 1 -> 2 -> 3 -> 4 -> 5 -> NULL
     Node* head = createNode(1);
     head->next = createNode(2);
     head->next->next = createNode(3);
